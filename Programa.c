@@ -164,12 +164,12 @@ int main() {
         
         /* TOTAL */
 
-        totalad = Subtotal + adicionalPeso;
+        totalad = Subtotal + adicionalPeso + adicionalModalidade + adicionalProtecao + adicionalTentativas;
 
 
         printf("\n-----------------------------\n");
         printf("Subtotal: R$ %.2f\n", Subtotal);
-        printf("Adicional: R$ %.2f\n", adicionalPeso);
+        printf("Adicional Peso: R$ %.2f\n", adicionalPeso);
         printf("Modalidade: R$ %.2f\n", adicionalModalidade);
         printf("Protecao Adicional: R$ %.2f\n", adicionalProtecao);
         printf("Tentativas Adicionais: R$ %.2f\n", adicionalTentativas);
@@ -189,6 +189,7 @@ int main() {
         printf("Opcao invalida!\n");
 
     }
+
 
 
     return 0;
