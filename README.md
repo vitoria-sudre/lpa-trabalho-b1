@@ -60,11 +60,17 @@ A ferramenta foi utilizada para esclarecer dúvidas sobre lógica de programaç�
 Exemplos de prompts relevantes
 
 "Me explica cada um dos acumuladores do resumo final."
+
 "Corrigir os erros do resumo final e dos acumuladores."
+
 "Valor médio: R$ 1.#J"
+
 "Como calcula o valor total e a média das entregas?"
+
 "Como atualizar os acumuladores?"
+
 "Validações de 1/0?"
+
 Sugestões aproveitadas
 
 Foram aproveitadas sugestões relacionadas à inicialização dos acumuladores e contadores, ao cálculo do valor total das entregas, ao cálculo do valor médio e à organização da apresentação do resumo final.
