@@ -58,6 +58,7 @@ Foi utilizada a ferramenta ChatGPT, da OpenAI, como apoio durante o desenvolvime
 A ferramenta foi utilizada para esclarecer dúvidas sobre lógica de programação e linguagem C, auxiliar na identificação de erros no código, explicar conceitos de programação e apoiar a revisão dos cálculos e acumuladores utilizados no programa.
 
 Exemplos de prompts relevantes
+
 "Me explica cada um dos acumuladores do resumo final."
 "Corrigir os erros do resumo final e dos acumuladores."
 "Valor médio: R$ 1.#J"
