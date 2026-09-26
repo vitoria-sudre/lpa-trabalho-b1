@@ -31,25 +31,31 @@ int validarProtecao(int add) {
 
 int main() {
 
-    int distancia, peso, modalidade, protecao;
-    int tentativas, nova_tentativa, inicia;
+    int distancia, peso, modalidade, protecao, entregas = 0;
+    int tentativas, nova_tentativa, inicia, outraEntrega;
     
-	int quantidadeEconomica = 0;
+    int quantidadeEconomica = 0;
     int quantidadeExpressa = 0;
     int quantidadePrioritaria = 0;
 
     float Subtotal, adicionalPeso, totalad, adicionalModalidade, adicionalProtecao, adicionalTentativas = 0;
-    float maiorValor, menorValor;
+    float maiorValor, menorValor, total = 0, media;
+    
     
     printf("Central de Atendimento. Deseja iniciar a sessao? (1) Sim | (0) Nao.\n");
     scanf("%d", &inicia);
 
 
     if (inicia == 1) {
+    	
+		outraEntrega = 1;
+
+        while (outraEntrega == 1) {
 
         printf("\nSessao iniciada (Entregas)!\n");
         printf("Por favor complete os dados abaixo:\n\n");
 
+        
 
         printf("Distancia: ");
         scanf("%d", &distancia);
@@ -172,47 +178,81 @@ int main() {
 
       
         
-        
-         /* CONTIDADES RESUMO*/
-        
-        
-        int entregas = 0;
-         entregas++;
     
-         
-       if (totalad > maiorValor) {
-       maiorValor = totalad;
-    }
-
-       if (totalad < menorValor) {
-       menorValor = totalad;
-   }
-        
         
         
         /* TOTAL */
 
         totalad = Subtotal + adicionalPeso + adicionalModalidade + adicionalProtecao + adicionalTentativas;
-        
-    
+
+         
+         
+       /* CONTIDADES RESUMO*/
+         total = total + totalad;
+         media = total / entregas;
+       
+             entregas++;
+
+        if (entregas == 1) {
+       maiorValor = totalad;
+       menorValor = totalad;
+      }
+       else {
+       if (totalad > maiorValor) {
         maiorValor = totalad;
+      }
+
+      if (totalad < menorValor) {
         menorValor = totalad;
+     }
+    }
          
         /* RESUMO FINAL */
-        printf("\n-----------------------------\n");
-        printf("Subtotal");
-        printf("Adicional de peso: R$ %.2f\n", adicionalPeso);
-        printf("Modalidade: R$ %.2f\n", adicionalModalidade);
-        printf("Protecao Adicional: R$ %.2f\n", adicionalProtecao);
-        printf("Tentativas Adicionais: R$ %.2f\n", adicionalTentativas);
-        printf("Total: R$ %.2f\n", totalad);
+        
+        
+         printf("Total de entrega: R$ %.2f\n", totalad);
         printf("-----------------------------\n");
-        printf("Quantidade de entregas: %d\n", entregas);
+        
+        
+        printf("-----------------------------\n");
+        printf("Deseja processar outra entrega? (1) Sim | (0) Nao.\n ");
+        scanf("%d", &outraEntrega);
+          
+		  
+		while (outraEntrega != 0 && outraEntrega != 1) {
+        printf("Somente 1 ou 0! Digite novamente: ");
+        scanf("%d", &outraEntrega);
+       }
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+
+        if (outraEntrega == 0) {
+
+        printf("\n========== RESUMO FINAL ==========\n");
+       
+        printf("-----------------------------\n");
+        printf("Quantidade de Entregas: %d\n", entregas);
+        
+        printf("Valor total calculado na sessão: R$ %.2f\n", total);
+        
+        printf("Valor médio das entregas: R$ %.2f\n", total / entregas);
+        
         printf("Quantidade de Economica: %d\n", quantidadeEconomica);
         printf("Quantidade de Expressa: %d\n", quantidadeExpressa);
         printf("Quantidade de Prioritarias: %d\n", quantidadePrioritaria);
-        printf("Maior valor de entrega: R$ %.2f\n", maiorValor);
-        printf("Menor valor de entrega: R$ %.2f\n", menorValor);
+        
+        printf("Maior valor de Entrega: R$ %.2f\n", maiorValor);
+        printf("Menor valor de Entrega: R$ %.2f\n", menorValor);
+              
+        }
+            
     } 
     
     else if (inicia == 0) {
@@ -230,4 +270,3 @@ int main() {
 
     return 0;
 }
-    
